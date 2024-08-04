@@ -1,20 +1,40 @@
 let humanScore  = 0;
 let computerScore = 0;
+const resultsArray =[];
 
+let rock = document.querySelector('#rock');
+let paper = document.querySelector('#paper');
+let scissors = document.querySelector('#scissors');
+
+let results = document.querySelector(".results")
+results.setAttribute('style', 'white-space: pre;');
+let humanChoice = 'rock';
+
+rock.addEventListener('click', () => {
+    humanChoice = 'rock';
+    playGame(5);
+    
+})
+
+paper.addEventListener('click', () => {
+    humanChoice = 'paper';
+    playGame(5);
+})
+
+scissors.addEventListener('click', () => 
+{
+    humanChoice = 'scissors';
+    playGame(5);
+})
 
 
 function getComputerChoice() {
-    const choiceList = ['rock', 'paper','scissors'];
 
+    const choiceList = ['rock', 'paper','scissors'];
     return choiceList[Math.floor(Math.random()*3)];
 
 }
 
-function getHumanChoice() {
-    let humanChoice = (prompt('Enter your choose', '')).toLowerCase();
-    return humanChoice;
-    console.log(`You have chosen ${humanChoice}`);
-}
 
 function playRound(humanChoice, computerChoice) {
 
@@ -38,13 +58,12 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame(numOfRounds) {
 
-    const resultsArray =[];
+    
 
     i = 1;
 
-    while(i  <= numOfRounds) {
+    while(i  < numOfRounds) {
 
-        let humanChoice = getHumanChoice();
         let computerChoice = getComputerChoice();
         let result = playRound(humanChoice, computerChoice);
 
@@ -62,7 +81,8 @@ function playGame(numOfRounds) {
 
         }
 
-    return [resultsArray, humanScore, computerScore];
+        results.textContent = `the computer score is : ${computerScore} \r\n the human score is : ${humanScore} \r\n and the array of results is: ${resultsArray}` ;
+        
     
     };
 
