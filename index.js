@@ -1,6 +1,7 @@
 let humanScore  = 0;
 let computerScore = 0;
 const resultsArray =[];
+let numOfRoundsPlayed = 0;
 
 let rock = document.querySelector('#rock');
 let paper = document.querySelector('#paper');
@@ -64,6 +65,8 @@ function playGame(numOfRounds) {
 
     while(i  < numOfRounds) {
 
+        numOfRoundsPlayed +=i;
+
         let computerChoice = getComputerChoice();
         let result = playRound(humanChoice, computerChoice);
 
@@ -81,7 +84,9 @@ function playGame(numOfRounds) {
 
         }
 
-        results.textContent = `the computer score is : ${computerScore} \r\n the human score is : ${humanScore} \r\n and the array of results is: ${resultsArray}` ;
+    numOfRoundsPlayed +=5;
+
+    results.textContent = ` total rounds played : ${numOfRoundsPlayed} \r\n the computer score is : ${computerScore} \r\n the human score is : ${humanScore} \r\n and the array of results is: ${resultsArray}` ;
         
     
     };
