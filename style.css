@@ -1,0 +1,39 @@
+body {
+    max-width: 800px;
+    margin: 0;
+    padding:0;
+}
+
+div.container {
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+}
+
+h1 {
+    color: red;
+    background-color: pink;
+    width: 300px;
+}
+
+button {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+button:hover {
+    background-color: blue;
+    color: white;
+}
+
+.results {
+    background-color: yellow
+    ;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-top: 20px;
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    text-wrap: wrap;
+}
